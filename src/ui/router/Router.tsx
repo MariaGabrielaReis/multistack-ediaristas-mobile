@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationTheme } from "ui/themes/app-theme";
 import Index from "pages";
-import FindHousekeepers from "pages";
+import FindHousekeepers from "pages/find-housekeepers";
 
 import Logo from "@assets/img/logos/e-diaristas-logo.png";
 
