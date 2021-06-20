@@ -4,8 +4,8 @@
     "strict": true,
     "baseUrl": "src",
     "paths": {
-      "@styles/*": ["ui/styles/*"],
-      "@assetes/*": ["../assetes/*"]
+      "@assets/*": ["../assets/*"],
+      "@styles/*": ["ui/styles/*"]
     }
   }
 }

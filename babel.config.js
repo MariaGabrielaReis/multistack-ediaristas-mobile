@@ -10,7 +10,7 @@ module.exports = function (api) {
             data: "./src/data",
             pages: "./src/pages",
             ui: "./src/ui",
-            "@assets": "/assets",
+            "@assets": "./assets",
             "@styles": "./src/ui/styles",
           },
         },
