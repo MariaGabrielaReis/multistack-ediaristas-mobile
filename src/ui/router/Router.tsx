@@ -4,11 +4,16 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationTheme } from "ui/themes/app-theme";
 import Index from "pages";
-import FindHousekeeper from "pages";
+import FindHousekeepers from "pages";
 
 import Logo from "@assets/img/logos/e-diaristas-logo.png";
 
 const Stack = createStackNavigator();
+
+export type RootStackParamList = {
+  Index: undefined;
+  FindHousekeepers: undefined;
+};
 
 const Router: React.FC = () => {
   return (
@@ -32,8 +37,8 @@ const Router: React.FC = () => {
           }}
         />
         <Stack.Screen
-          name={"FindHousekeeper"}
-          component={FindHousekeeper}
+          name={"FindHousekeepers"}
+          component={FindHousekeepers}
           options={{
             title: "Encontrar diaristas",
           }}
