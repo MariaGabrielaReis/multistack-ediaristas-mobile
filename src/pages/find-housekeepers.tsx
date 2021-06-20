@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
 import { useTheme } from "@emotion/react";
 import PageTitle from "ui/components/data-display/PageTitle/PageTitle";
@@ -13,20 +13,29 @@ import {
   ResponseContainer,
 } from "@styles/pages/find-housekeepers.style";
 import useIndex from "data/hooks/pages/useIndex.page";
+import useFindHousekeepers from "data/hooks/pages/useFindHousekeeperspage.mobile";
 
 const FindHousekeepers: React.FC = () => {
   const { colors } = useTheme();
   const {
-    cep,
-    setCep,
-    cepValid,
-    searchPro,
-    error,
-    housekeeper,
-    searchDone,
-    loading,
-    housekeeperRemaining,
-  } = useIndex();
+      cep,
+      setCep,
+      cepValid,
+      searchPro,
+      error,
+      housekeeper,
+      searchDone,
+      loading,
+      housekeeperRemaining,
+    } = useIndex(),
+    { cepAutomatico } = useFindHousekeepers();
+
+  useEffect(() => {
+    if (cepAutomatico && !cep) {
+      setCep(cepAutomatico);
+      searchPro(cepAutomatico);
+    }
+  }, [cepAutomatico]);
 
   return (
     <ScrollView>
